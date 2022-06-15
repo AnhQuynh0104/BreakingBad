@@ -2,12 +2,6 @@ import { Layout, Menu } from 'antd'
 import Link from 'next/link'
 
 function Header(){
-    const menuItems = [
-        {
-            key: '1',
-            
-        }
-    ]
     return(
         <>
             <Layout.Header>
@@ -17,7 +11,9 @@ function Header(){
                     mode="horizontal"
                     defaultSelectedKeys={['1']}
                 >
-                    <Menu.Item key='1'>Home</Menu.Item>
+                    <Menu.Item key='1'>
+                        <Link href='/'>Home</Link>
+                    </Menu.Item>
                     <Menu.Item key='2'>
                         <Link href='/character'>Character</Link>
                     </Menu.Item>
