@@ -1,0 +1,7 @@
+.section {
+    padding: 2% 7%;
+    display: flex;
+}
+.section-left, .section-right{
+    width: 50%;
+}

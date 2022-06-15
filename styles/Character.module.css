@@ -7,34 +7,3 @@
     margin-right: 20px;
     margin-bottom: 20px;
 }
-.card-container{
-    position: relative;  
-    width: 100%;
-}
-.card-container:before{
-    content: "";
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    right: 0;
-}
-.card-button{
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    opacity: 0;
-    background-color: #1890ff;
-    color: #fff;
-    border: none;
-}
-.card-container:hover .card-button{
-    opacity: 1;
-}
-.card-button:hover{
-    background-color: #1890ff;
-    color: #fff;
-}

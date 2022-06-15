@@ -5,13 +5,13 @@ import Header from "../../components/layout/Header"
 import Footer from '../../components/layout/Footer'
 import styles from '../../styles/Home.module.css'
 import stylesCharacter from '../../styles/Character.module.css'
+import Link from "next/link";
 
 const { Meta } = Card
 const { Title } = Typography
 
 function Character(){
     const [character, setCharacter] = useState([])
-    const [isModalVisible, setIsModalVisible] = useState(false)
 
     useEffect(() => {
         async function fetchCharacter(){
@@ -29,14 +29,6 @@ function Character(){
         fetchCharacter()
     }, [])
 
-    const showModal = () => {
-        setIsModalVisible(true)
-    }
-
-    const hideModal = () => {
-        setIsModalVisible(false)
-    }
-
     return(
         <>
             <Header />
@@ -45,39 +37,35 @@ function Character(){
                 <div className={stylesCharacter['list-character']} >
                 {
                     character.map(c => (
-                        <Card 
-                            key={c.id} 
-                            className={stylesCharacter['list-character-item']}
-                            hoverable
-                            cover={
-                                <div className={stylesCharacter['card-container']}> 
+                        <Link 
+                            key={c.char_id}
+                            href={`/character/${c.char_id}`}>
+                            <Card 
+                                key={c.id} 
+                                className={stylesCharacter['list-character-item']}
+                                hoverable
+                                cover={
                                     <Image 
-                                        alt="img" src={`/api/imageFetcher?url=${encodeURIComponent(c.img)}`} 
+                                        alt="img" 
+                                        src={`/api/imageFetcher?url=${encodeURIComponent(c.img)}`} 
                                         width="100%" 
                                         height="100%" 
                                         layout="responsive" 
-                                        objectFit='contain'
+                                        objectFit="contain"
                                     />
-                                    <Button className={stylesCharacter['card-button']} onClick={showModal}>View detail</Button>
-                                </div>
-                            }
-                        >
-                            <Meta 
-                                title={c.name} 
-                                description={c.occupation.map((des) => (
-                                    <Tag key={des}>{des}</Tag>
-                                    ))
                                 }
-                            />
-                        </Card>
+                            >
+                                <Meta 
+                                    title={c.name} 
+                                    description={c.occupation.map((des) => (
+                                        <Tag key={des}>{des}</Tag>
+                                        ))
+                                    }
+                                />
+                            </Card>
+                        </Link>
                     ))
                 }
-                <Modal 
-                    title="Detail"
-                    visible={isModalVisible}
-                    onOk={hideModal}
-                    onCancel={hideModal}>
-                </Modal>
                 </div>
             </div>
             <Footer />

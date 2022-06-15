@@ -117,3 +117,9 @@
 .body{
   padding: 2% 7%;
 }
+.search-input{
+  position: absolute;
+  top: 55%;
+  width: 40%;
+  left: 7%;
+}
