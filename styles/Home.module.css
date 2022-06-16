@@ -123,3 +123,12 @@
   width: 40%;
   left: 7%;
 }
+.search-form{
+  display: flex;
+}
+.input-value{
+  width: 100%;
+}
+.title{
+  text-align: center;
+}
