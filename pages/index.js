@@ -75,7 +75,7 @@ export default function Home() {
               <p>Appearance: {s.appearance.toString()}</p>
               <p>Actor: {s.portrayed}</p>
               <p>Category: {s.category}</p>
-              <p>Better Call Sul appearance:   
+              <p>Better Call Saul appearance:   
               {
                 s.better_call_saul_appearance.toString() != '' 
                   ? s.better_call_saul_appearance.toString()

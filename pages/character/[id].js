@@ -2,7 +2,7 @@ import { useRouter } from 'next/router'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { notification, Typography, Tag } from 'antd'
-import Header from '../../components/layout/Header'
+import HeaderGoBack from '../../components/layout/HeaderGoBack'
 import Footer from '../../components/layout/Footer'
 import styles from '../../styles/CharacterDetail.module.css'
 
@@ -32,31 +32,33 @@ function CharacterDetail(){
 
     return(
         <>
-            <Header />
+            <HeaderGoBack />
             {detail.map(d => (
             <div className={styles.section} key={d}>
                 <div className={styles['section-left']}>
                     <Title>{d.name}</Title>
-                    <p>Birthday: {d.birthday}</p>
-                    <div>
-                        Job: {d.occupation.map(o => (
+                    <p><strong>Birthday: </strong> {d.birthday}</p>
+                    <div><strong>
+                        Job: </strong>{d.occupation.map(o => (
                             <Tag key={o}>{o}</Tag>
                         ))}
                     </div>
-                    <p>Status: {d.status}</p>
-                    <p>Nickname: {d.nickname}</p>
-                    <p>Actor: {d.portrayed}</p>
-                    <p>Category: {d.category}</p>
+                    <br />
+                    <p><strong>Status: </strong>{d.status}</p>
+                    <p><strong>Nickname: </strong> {d.nickname}</p>
+                    <p><strong>Actor: </strong>{d.portrayed}</p>
+                    <p><strong>Category: </strong>{d.category}</p>
                     <div>
-                        Season appearance: {d.appearance.map(a => (<Tag key={a}>{a}</Tag>))}
+                        <strong>Season appearance: </strong>{d.appearance.map(a => (<Tag key={a}>{a}</Tag>))}
                     </div> 
-                    { detail.better_call_saul_appearance != '' ? 
-                        <div>
-                            Better Call Saul appearance: 
-                            { d.better_call_saul_appearance.map(b => (<Tag key={b}>{b}</Tag>)) }
-                        </div>
-                        : null
-                    }
+                    <br />
+                    <p>
+                        <strong>Better Call Saul appearance: </strong>
+                        { detail.better_call_saul_appearance != '' ? 
+                            d.better_call_saul_appearance.map(b => (<Tag key={b}>{b}</Tag>))
+                            : 0 
+                        }
+                    </p>
                 </div>
                 <div className={styles['section-right']}>
                     <Image 
