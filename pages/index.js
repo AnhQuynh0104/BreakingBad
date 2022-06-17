@@ -66,8 +66,9 @@ export default function Home() {
                   src={`/api/imageFetcher?url=${encodeURIComponent(s.img)}`} 
                   width={200} 
                   height={250} 
-              />
+                />
               </div>
+              <br />
               <p>Birthday: {s.birthday}</p>
               <p>Occupation: {s.occupation.toString()}</p>
               <p>Status: {s.status}</p>

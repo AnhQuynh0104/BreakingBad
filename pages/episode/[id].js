@@ -32,7 +32,6 @@ function EpisodeDetail(){
     const onClickTag = async (c) => {
         const response = await fetch(`https://www.breakingbadapi.com/api/characters?name=${c}`)
         const data = await response.json()
-        console.log(data)
         const character_id = data[0].char_id
         router.push(`/character/${character_id}`)
     }
