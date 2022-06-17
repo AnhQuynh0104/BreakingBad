@@ -1,8 +1,7 @@
 import { useState } from 'react';
-import Head from 'next/head'
 import Image from 'next/image'
 import { Input, notification, Button, Form, Modal, Typography } from 'antd'
-import banner from '../assets/images/banner.png'
+import banner from '../assets/images/banner'
 import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import styles from '../styles/Home.module.css'
@@ -69,14 +68,14 @@ export default function Home() {
                 />
               </div>
               <br />
-              <p>Birthday: {s.birthday}</p>
-              <p>Occupation: {s.occupation.toString()}</p>
-              <p>Status: {s.status}</p>
-              <p>Nickname: {s.nickname}</p>
-              <p>Appearance: {s.appearance.toString()}</p>
-              <p>Actor: {s.portrayed}</p>
-              <p>Category: {s.category}</p>
-              <p>Better Call Saul appearance:   
+              <p><strong>Birthday: </strong>{s.birthday}</p>
+              <p><strong>Occupation:</strong> {s.occupation.toString()}</p>
+              <p><strong>Status:</strong> {s.status}</p>
+              <p><strong>Nickname:</strong> {s.nickname}</p>
+              <p><strong>Appearance:</strong> {s.appearance.toString()}</p>
+              <p><strong>Actor:</strong> {s.portrayed}</p>
+              <p><strong>Category:</strong> {s.category}</p>
+              <p><strong>Better Call Saul appearance: </strong>  
               {
                 s.better_call_saul_appearance.toString() != '' 
                   ? s.better_call_saul_appearance.toString()
